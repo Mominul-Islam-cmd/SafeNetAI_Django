@@ -1,77 +1,25 @@
-/* .................navbar items................... */
-
-.nav-item {
-    margin-right: 30px;
-
-}
-
-.nav-link {
-    color: rgba(189, 10, 10, 0.925);
-}
-
-
-
-/* ......nav button........ */
-
-.ab,
-.ed,
-
-.con {
-    
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px;
-    color: rgb(8, 3, 3);
-
-    background-color: #064f94;
-    color: #dde4eb;
-    opacity: 0.8;
-}
-
-
-
-/* ................nav bar hover........................... */
-
-.abo:hover {
-    background-color: steelblue !important;
-
-    /* text-align: center; */
-    transition: 1s;
-    /* border: 2px solid steelblue; */
-    color: #fff2fe;
-    /* font-size: larger; */
-    /* font-weight: bolder; */
-
-
-}
-
-
-/* .................navbar items................... */
-
-.nav-item {
-    margin-right: 30px;
-
-}
-
-.nav-link {
-    color: rgba(189, 10, 10, 0.925);
-}
-
-.ml {
-
-    background-color: antiquewhite;
-    padding: 5px;
-
-
-}
-
-/* Home Body sections */
-
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: rgb(252, 252, 252);
     background-image: url('images/pexels-rostislav-5011647.jpg');
 }
+
+.occ,
+.pb,
+.ed,
+.ab,
+.sk,
+.pro,
+.cg,
+.con {
+
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+    color: rgb(8, 3, 3);
+
+}
+
 
 
 
@@ -90,6 +38,23 @@ body {
     color: rgb(247, 209, 238);
 }
 
+
+/* ......bannar ITEMS............. */
+
+/* .bannar_container {
+    background-color: rgb(169, 189, 206);
+}
+
+.banner_text {
+    background-color: rgb(53, 71, 87);
+}
+
+.banner_column {
+    background-color: rgb(146, 158, 150);
+    color: aliceblue;
+    text-align: center;
+
+} */
 
 .bannar_body {
     background-color: lightgray;
@@ -147,6 +112,92 @@ body {
     color: red;
 }
 
+/* .................navbar items................... */
+
+.nav-item {
+    margin-right: 30px;
+
+}
+
+.nav-link {
+    color: rgba(189, 10, 10, 0.925);
+}
+
+.ml {
+
+    background-color: antiquewhite;
+    padding: 5px;
+
+
+}
+
+/* ......nav button........ */
+
+.ab,
+.ed,
+.sk,
+.pb,
+.occ,
+.pro,
+.cg,
+.con {
+    background-color: #064f94;
+    color: #dde4eb;
+    opacity: 0.8;
+}
+
+/* ................nav bar hover........................... */
+
+.abo:hover {
+    background-color: steelblue !important;
+
+    /* text-align: center; */
+    transition: 1s;
+    /* border: 2px solid steelblue; */
+    color: #fff2fe;
+    /* font-size: larger; */
+    /* font-weight: bolder; */
+
+
+}
+
+/*
+.occ:hover {
+    background-color: steelblue !important;
+    height: 78px;
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+    transition: 1s;
+
+    color: #dae1e7;
+    font-size: larger;
+    font-weight: bolder;
+
+
+} */
+
+/* ........................................................... */
+
+
+.espam_header {
+    font-family: 'Open Sans', sans-serif;
+    /* background-color: rgb(108, 108, 151); */
+    color: rgba(11, 59, 134, 0.829);
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.site {
+    margin-left: 100px;
+    width: 100px;
+
+}
+
+
 
 /* ...........About section................ */
 
@@ -161,11 +212,75 @@ body {
 
 }
 
+/* education section design */
 
 
 
 
-/* Home Body sections */
+.education-container {
+    background-color: rgb(235, 240, 240);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.edu_title {
+    text-align: center;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: red;
+
+}
+
+.edu_icon {
+    margin-left: 10px;
+    margin-top: 50px;
+    width: 100px;
+    align-items: center;
+}
+
+.edu_details {
+    background-color: #ccc;
+    width: 95%;
+    height: 90%;
+    margin-top: 0px;
+    margin-left: 90px;
+    border-radius: 6px;
+    padding: 35px;
+
+}
+
+.edu_date {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.Degree {
+    font-size: large;
+    font-weight: 550;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    font-style: italic;
+}
+
+.UV{
+    font-size: larger;
+    font-weight: 650;
+    margin-top: 5px;
+    margin-bottom: 3px;
+
+}
+
+.result {
+    margin-bottom: 3px;
+    font-weight: 400;
+    font-style: oblique;
+}
+
+.thesis_title {
+    font-weight: 510;
+    font-style: italic;
+}
 
 /* SKILLS SECTION */
 .sktext {
@@ -272,6 +387,7 @@ body {
     }
 }
 
+
 /* ...........................info details.................... */
 .dgetit {
     font-weight: 600;
@@ -293,7 +409,56 @@ body {
     width: 20px;
 }
 
+/*........................... footer section ...................*/
+.footer {
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(235, 240, 240);
+    padding: 20px;
+}
 
+.footerheading_text {
+    text-align: center;
+    font-weight: bold;
+}
+
+.git {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.sc {
+    margin-right: 20px;
+    margin-top: 15px;
+
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+}
+
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0px 5px;
+
+
+}
 
 
 /* .....................message items............. */
@@ -365,4 +530,58 @@ textarea[type=text]:focus {
 
 .massagesubmit {
     margin-left: 400px;
+}
+
+
+
+/* another contact information template */
+.footer-section {
+    background-color: #f8f9fa;
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.custom-icon i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.custom-icon i:hover {
+    transform: scale(1.2);
+    color: #0d6efd;
+}
+
+.contact-title {
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.contact-text {
+    margin: 0;
+    color: #333;
+}
+
+@media (max-width: 576px) {
+    .footer-title {
+        font-size: 1.5rem;
+    }
+
+    .footer-description {
+        font-size: 0.9rem;
+    }
 }
