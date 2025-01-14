@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/summer-view" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/agnesia" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/christmas-friday" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50"
+    style="background-color:#31473A; "background-image: url({% static 'images/pexels-rostislav-5011647.jpg' %}), background-attachment: fixed; background-size: cover; background-position: center;">
+<!-- Include Navbar -->
+{% include 'navbar.html' %}
+
+    <br><br><br><br><br>
+
+    <div class="container-fluid row bannar_body text-center" style="background-color: transparent;">
+
+        <div class="bannar_items" id="main_about" style="background-color: transparent;">
+            <h1 style="font-family: 'Overpass', sans-serif; color: white; text-shadow: 2px 2px 4px #000000;">SafeNet AI
+            </h1>
+            <h4 class="tpyebefore"> <span class="typing"
+                    style="color: white; text-shadow: 2px 2px 4px #000000;">Research </span>
+            </h4>
+
+        </div>
+    </div>
+
+
+
+    <!-- This is About Section -->
+
+    <!-- <div class=" container" id="aboutme">
+        <div class="about_part">
+            <div>
+                <div class="abme">About US
+                </div>
+                <p class="wai">__who We Are __</p>
+            </div>
+        </div> -->
+
+
+    <div class="row align-items-center justify-content-center "
+        style="background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto;">
+
+        <div class="col-12" style="color: white;">
+
+            <h2 class="abname" style="font-family: 'Christmas Friday', sans-serif;">Empowering Research, Enabling
+                Innovation </h2>
+            <p>Join a collaborative platform for AI, NLP, and Computer Vision research and projects. </p>
+            <p class="aboutdetails_text">
+                At SafeNet, we believe research should be accessible to everyone, regardless of background or academic
+                level. Our mission is to foster a collaborative environment where ideas meet innovation, and passion
+                fuels progress.
+
+                Join us as we explore the frontiers of AI, NLP, and Computer Vision through groundbreaking research and
+                meaningful collaborations. Whether you're a student, researcher, or industry professional, there's a
+                place for you here.
+
+                Together, let's shape the future of technology—one project at a time.
+
+            </p>
+            <!-- New Action Buttons -->
+            <div class="d-flex justify-content-center gap-4 mt-5">
+                <a href="project and research\project_publication.html" target="_blank"
+                    class="btn btn-primary btn-lg px-4 py-3" style="font-size: 1.2rem; font-weight: 600; color: white;">
+                    Explore Our Research
+                </a>
+                <a href="https://www.facebook.com/groups/1718596145212523" target="_blank"
+                    class="btn btn-success btn-lg px-4 py-3" style="font-size: 1.2rem; font-weight: 600; color: white;">
+                    Join Our Community
+                </a>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- skill Section -->
+
+
+    <div class="container container-fluid mainskillbody" id="mainskillbody"
+        style="color: white; background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto; margin-top: 20px;">
+
+        <div class="container skillheadr_body " style="color: white;">
+            <h2 class="skillheader_text">Our Research Domains</h2>
+            <p>We focus on cutting-edge technologies and emerging fields in AI research, including:</p>
+        </div>
+
+        <div class="row skillbody" style="color: white;">
+            <!-- Research Domains -->
+            <div class="col-lg-12">
+                <div style="padding-left: 20px;">
+                    <h4 class="sktext">Machine Learning (ML)</h4>
+                    <p>Building intelligent systems through data-driven models.</p>
+                    <h4 class="sktext">Deep Learning (DL)</h4>
+                    <p>Exploring advanced neural network architectures.</p>
+                    <h4 class="sktext">Natural Language Processing (NLP)</h4>
+                    <p>Enabling machines to understand and process human language.</p>
+                    <h4 class="sktext">Computer Vision (CV)</h4>
+                    <p>Teaching machines to interpret and understand visual data.</p>
+                    <h4 class="sktext">Large Language Models (LLMs)</h4>
+                    <p>Developing models that power intelligent conversational AI.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
