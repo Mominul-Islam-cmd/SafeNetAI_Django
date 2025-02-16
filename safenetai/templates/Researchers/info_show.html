@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="{% static 'Researchers/info_show.css' %}" rel="stylesheet">
+
+<section id="team" class="pb-5">
+  <div class="container">
+    <h5 class="section-title h1">RESEARCHERS</h5>
+    <div class="row">
+      {% for researcher in Researchers_list %}
+      <!-- Team Member -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="image-flip">
+          <div class="mainflip flip-0">
+            <!-- Front Side -->
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img class="img-fluid" src="{% static 'Researchers/images/Saiful.jpg' %}" alt="card image">
+                  </p>
+                  <h4 class="card-title">{{ researcher.first_Name }} {{researcher.last_Name}} </h4>
+                  <p class="card-text">
+                    <strong>Current project:</strong> {{ researcher.current_project }}
+                  </p>
+
+                  <p> <i class="fa fa-user"></i></p>
+                </div>
+                <p class="card-text">
+                  <strong>Ratings:</strong> {{ researcher.Ranking }}
+                </p>
+              </div>
+
+            </div>
+            <!-- Back Side -->
+            <div class="backside">
+              <div class="card">
+                <!-- edit_button -->
+                <a href="{% url 'Researchers:edit_info' researcher_id=researcher.id %}" class="edit_button"> <input type="button" value="Edit" name="Edit" class="btn btn-primary">
+                </a>
+                <!-- edit_button -->
+                <div class="card-body text-center mt-4">
+                    <h4 class="card-title"> <a href="{% url 'Researchers:research_student_recommendation_show' researcher_id=researcher.id  %}">  {{ researcher.first_Name }} {{researcher.last_Name}} </a> </h4>
+                  <p class="card-text">
+                    <strong>University:</strong> {{ researcher.uv_name }}<br>
+                    <strong>Department:</strong> {{ researcher.dept_name }}<br>
+                    <strong>Research Interests:</strong> {{ researcher.interested_domain }}<br>
+                    <strong>Experiences:</strong> {{ researcher.experiences }}<br>
+                    <strong>Session:</strong> {{ researcher.session }}
+                  </p>
+                  <p>
+                    <a href=""> <i class="fa fa-user"></i></a>
+                    <a href="" class="social_icons"> <i class="fa fa-user"></i></a>
+                    <a href="" class="social_icons"> <i class="fa fa-user"></i></a>
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- Add Member Card -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="image-flip1">
+          <div class="mainflip flip-0">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img class="img-fluid" src="/static/images/add_icon.png" alt="Add Member">
+                  </p>
+                  <!-- <h4 class="card-title">Add New Member</h4> -->
+                  <p class="card-text">
+                    <a href="{% url 'Researchers:info_form' %}" class="btn btn-primary">Add New Member</a>
+                  </p>
+
+                  <p class="card-text">
+                    <a href="{% url 'Researchers:recommend_form'%}" class="btn btn-primary btn-sm"> Researchers Details </a>
+                  </p>
+                 
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ {% extends "base.html" %}
+ {% block body_block %}
+ {% load static %}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="{% static 'Researchers/researchers.css' %}" rel="stylesheet">
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="Header_title">Edit Researcher Information</h3>
+        </div>
+    {% if sucess_text %}
+
+        <div class="alert alert-success" role="alert">
+            {{ sucess_text }}
+
+        </div>
+       {% endif %}
+
+        <div class="card-body "  >
+            <form method="POST">
+                {{ edit_form.as_p }}
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var inputs = document.querySelectorAll("input");
+                        inputs.forEach(function(input) {
+                            input.classList.add("form-control");
+                            input.setAttribute("placeholder", "Enter " + input.name);
+                        });
+                    });
+                </script>
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form><br>
+            <a href="{% url 'Researchers:delete_info' researcher_id=researcher_id %}" class="btn btn-danger" onclick="return confirm('Delete This Member')"> Delete </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+ {% endblock %}
