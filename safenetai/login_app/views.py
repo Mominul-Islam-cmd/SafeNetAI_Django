@@ -26,11 +26,12 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('login_app:index'))
+                return HttpResponseRedirect(reverse('About:about_us'))
                 # return render(request, 'login_app/login.html',context= {})
             else:
                 return HttpResponse("ACCOUNT NOT ACTIVE")
-                return HttpResponseRedirect(reverse('login_app:login_page'))
+                # return HttpResponseRedirect(reverse('login_app:login_page'))
+        else:
             return HttpResponse("Someone tried to login and failed!")
       
     else:
@@ -45,7 +46,7 @@ def index(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('login_app:index'))
+    return HttpResponseRedirect(reverse('About:about_us'))
 
 
 

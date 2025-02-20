@@ -20,7 +20,7 @@
     style="background-color:#f8faff;  background-attachment: fixed; background-size: cover; background-position: center;">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/About/about_us" style="font-weight: bold; font-size: 1.5rem; color: #be0a0a;">
+        <a class="navbar-brand" href="{% url 'login_app:register_view' %}" style="font-weight: bold; font-size: 1.5rem; color: #be0a0a;">
             <img src="{% static 'images/logo.png' %}" class="rounded-circle" width="50px" alt="Logo"> SafeNet.AI
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -30,13 +30,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/About/about_us">About Us </span></a>
+                    <a class="nav-link" href="{% url 'About:about_us' %}">About Us </span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Researchers/reseachers_show/">RESEACHERS</a>
+                    <a class="nav-link" href="{% url 'Researchers:researcher_view' %}">RESEACHERS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login_app:register_view' %}">Guidelines</a>
@@ -45,9 +45,15 @@
                     <a class="nav-link" href="#">Projects & Publications </a>
                 </li>
 
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_app:login_page' %}">Login </a>
+                    <a class="nav-link" href="{% url 'login_app:user_logout' %}">Logout </a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_app:login_view' %}">Login </a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>

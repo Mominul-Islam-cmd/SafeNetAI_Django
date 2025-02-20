@@ -40,8 +40,10 @@
             <div class="backside">
               <div class="card">
                 <!-- edit_button -->
+                {% if user.is_superuser or user.username == 'subadmin' %}
                 <a href="{% url 'Researchers:edit_info' researcher_id=researcher.id %}" class="edit_button"> <input type="button" value="Edit" name="Edit" class="btn btn-primary">
                 </a>
+                {% endif %}
                 <!-- edit_button -->
                 <div class="card-body text-center mt-4">
                     <h4 class="card-title"> <a href="{% url 'Researchers:research_student_recommendation_show' researcher_id=researcher.id  %}">  {{ researcher.first_Name }} {{researcher.last_Name}} </a> </h4>
@@ -67,31 +69,31 @@
       {% endfor %}
 
       <!-- Add Member Card -->
+      {% if user.is_superuser or user.is_subadmin %}
       <div class="col-12 col-sm-6 col-md-4">
         <div class="image-flip1">
           <div class="mainflip flip-0">
-            <div class="frontside">
-              <div class="card">
-                <div class="card-body text-center">
-                  <p>
-                    <img class="img-fluid" src="/static/images/add_icon.png" alt="Add Member">
-                  </p>
-                  <!-- <h4 class="card-title">Add New Member</h4> -->
-                  <p class="card-text">
-                    <a href="{% url 'Researchers:info_form' %}" class="btn btn-primary">Add New Member</a>
-                  </p>
+        <div class="frontside">
+          <div class="card">
+        <div class="card-body text-center">
+          <p>
+        <img class="img-fluid" src="/static/images/add_icon.png" alt="Add Member">
+          </p>
+          <!-- <h4 class="card-title">Add New Member</h4> -->
+          <p class="card-text"></p>
+        <a href="{% url 'Researchers:info_form' %}" class="btn btn-primary">Add New Member</a>
+          </p>
 
-                  <p class="card-text">
-                    <a href="{% url 'Researchers:recommend_form'%}" class="btn btn-primary btn-sm"> Researchers Details </a>
-                  </p>
-                 
-                  
-                </div>
-              </div>
-            </div>
+          <p class="card-text">
+        <a href="{% url 'Researchers:recommend_form'%}" class="btn btn-primary btn-sm"> Researchers Details </a>
+          </p>
+        </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>
+      {% endif %}
 
 
     </div>

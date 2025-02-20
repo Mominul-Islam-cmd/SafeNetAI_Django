@@ -1,9 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from Researchers import views
-
 app_name = 'Researchers'
-
 urlpatterns = [
     path("info_form/", views.info_form, name='info_form'),
     path("reseachers_show/", views.researcher_view, name='researcher_view'),

@@ -1,25 +1,22 @@
 <!DOCTYPE html>
- {% extends "base.html" %}
- {% block body_block %}
- {% load static %}
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link href="{% static 'Researchers/researchers.css' %}" rel="stylesheet">
-
 
 <div class="container">
     <div class="card">
         <div class="card-header">
             <h3 class="Header_title">Edit Researcher Information</h3>
         </div>
-    {% if sucess_text %}
-
+        {% if success_text %}
         <div class="alert alert-success" role="alert">
-            {{ sucess_text }}
-
+            {{ success_text }}
         </div>
-       {% endif %}
-
-        <div class="card-body "  >
+        {% endif %}
+        {% if user.is_superuser or user.username == 'subadmin' %}
+        <div class="card-body">
             <form method="POST">
                 {{ edit_form.as_p }}
                 <script>
@@ -34,12 +31,15 @@
                 {% csrf_token %}
                 <button type="submit" class="btn btn-primary">Update</button>
             </form><br>
-            <a href="{% url 'Researchers:delete_info' researcher_id=researcher_id %}" class="btn btn-danger" onclick="return confirm('Delete This Member')"> Delete </a>
+            {% if user.is_superuser %}
+                <a href="{% url 'Researchers:delete_info' researcher_id=researcher_id %}" class="btn btn-danger" onclick="return confirm('Delete This Member')"> Delete </a>
+            {% endif %}
         </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            You do not have permission to view this page.
+        </div>
+        {% endif %}
     </div>
 </div>
-
-
-
-
- {% endblock %}
+{% endblock %}
