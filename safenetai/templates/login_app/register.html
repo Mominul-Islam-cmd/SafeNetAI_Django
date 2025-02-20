@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<!-- Add Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Add Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="{% static 'login/register.css' %}" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-group label {
+        font-weight: 500;
+    }
+
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+</style>
+{% if registered %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Registration Successful!  </strong> Please login to continue.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>   <div class="form-group text-center">
+            <a href="{% url 'login_app:login_page' %}"> <button type="submit"
+                    class="btn btn-primary btn-block">Login In </button> </a>
+        </div>
+    </button>
+</div>
+{% else %}
+
+<div class="container text-center mt-4 mb-4" style="background-color: rgb(84, 126, 163); font-family: 'Roboto', sans-serif; color: white; padding: 1em; border-radius: 10px;">
+    <p class="lead">To follow our guidelines, please fill out this form. If you already have an account, simply click the 'Already have an account' button.</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Registration</h4>
+                </div>
+                <div class="card-body">
+                    <form enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ user_form.as_p }}
+                        </div>
+                        <div class="form-group">
+                            {{ user_info_form.as_p }}
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-success">Registration</button>
+                        </div>
+                        <br>
+
+                    </form>
+                    <div class="form-group text-center">
+                        <a href="{% url 'login_app:login_page' %}"> <button type="submit"
+                                class="btn btn-primary btn-block">Already Have account</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const placeholders = {
+            // "id_username": "Enter your Fullname",
+            // "id_password": "Enter password",
+            "id_email": "Enter your valid email",
+            "id_phone_number": "e.g. 01234567811",
+            // "id_institution": "Enter your Current Institution",
+            // Add more field IDs and placeholders as needed
+        };
+        for (const [id, placeholder] of Object.entries(placeholders)) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.setAttribute("placeholder", placeholder);
+                // element.style.opacity = ""; // Change the opacity of the placeholder
+                // Change the border of the input field
+                element.style.fontFamily = "Times New Roman"; // Change the font style of the input field
+            }
+        }
+    });
+</script>
+
+{% endif %}
+{% endblock %}

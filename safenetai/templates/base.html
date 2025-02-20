@@ -27,10 +27,14 @@
                     <a class="nav-link" href="/Researchers/reseachers_show/">RESEACHERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Guidelines</a>
+                    <a class="nav-link" href="{% url 'login_app:register_view' %}">Guidelines/Registration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Projects & Publications </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_app:login_page' %}">Login </a>
                 </li>
             </ul>
         </div>
