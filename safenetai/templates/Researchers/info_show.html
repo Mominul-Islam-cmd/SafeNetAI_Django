@@ -7,6 +7,7 @@
 
 <link href="{% static 'Researchers/info_show.css' %}" rel="stylesheet">
 
+
 <section id="team" class="pb-5">
   <div class="container">
     <h5 class="section-title h1">RESEARCHERS</h5>
@@ -21,7 +22,7 @@
               <div class="card">
                 <div class="card-body text-center">
                   <p>
-                    <img class="img-fluid" src="{% static 'Researchers/images/Saiful.jpg' %}" alt="card image">
+                    <img class="img-fluid" src="{% if researcher.profile_pic %}{{ researcher.profile_pic.url }}{% else %}{% static 'images/default_profile.png' %}{% endif %}" alt="card image">
                   </p>
                   <h4 class="card-title">{{ researcher.first_Name }} {{researcher.last_Name}} </h4>
                   <p class="card-text">
@@ -31,7 +32,7 @@
                   <p> <i class="fa fa-user"></i></p>
                 </div>
                 <p class="card-text">
-                  <strong>Ratings:</strong> {{ researcher.Ranking }}
+                  <strong>Ratings:</strong> {{ researcher.Ranking }} %
                 </p>
               </div>
 
@@ -46,8 +47,11 @@
                 {% endif %}
                 <!-- edit_button -->
                 <div class="card-body text-center mt-4">
-                    <h4 class="card-title"> <a href="{% url 'Researchers:research_student_recommendation_show' researcher_id=researcher.id  %}">  {{ researcher.first_Name }} {{researcher.last_Name}} </a> </h4>
-                  <p class="card-text">
+                    <!-- <h4 class="card-title"> <a href="{% url 'Researchers:research_student_recommendation_show' researcher_id=researcher.id  %}">  {{ researcher.first_Name }} {{researcher.last_Name}} </a> </h4> -->
+                  
+                    <h5 class="card-title">  {{ researcher.first_Name }} {{researcher.last_Name}} </h5>
+
+                    <p class="card-text">
                     <strong>University:</strong> {{ researcher.uv_name }}<br>
                     <strong>Department:</strong> {{ researcher.dept_name }}<br>
                     <strong>Research Interests:</strong> {{ researcher.interested_domain }}<br>
@@ -55,10 +59,31 @@
                     <strong>Session:</strong> {{ researcher.session }}
                   </p>
                   <p>
-                    <a href=""> <i class="fa fa-user"></i></a>
-                    <a href="" class="social_icons"> <i class="fa fa-user"></i></a>
-                    <a href="" class="social_icons"> <i class="fa fa-user"></i></a>
+<!--               
+                    <a href="{{ researcher.github_url }}" class="social_icons"> <i class="fa fa-github"></i></a>
+                    <a href="{{ researcher.personal_site_url }}" class="social_icons"> <i class="fa fa-globe"></i></a>
+                    <a href="{{ researcher.linekdin_url }}" class="social_icons"> <i class="fa fa-linkedin"></i></a> -->
+                    {% if researcher.github_url %}
+                    <a href="{{ researcher.github_url }}" target="_blank" class="social_icons"> <i class="fa fa-github"></i></a>
+                    {% endif %}
+  
+                    {% if researcher.personal_website %}
+                    <a href="{{ researcher.personal_website }}" target="_blank" class="social_icons"> <i class="fa fa-globe"></i></a>
+                    {% endif %}
+  
+                    {% if researcher.linekdin_url %}
+                    <a href="{{ researcher.linekdin_url }}" target="_blank" class="social_icons"> <i class="fa fa-linkedin"></i></a>
+                    {% endif %}
+                  
+             
+                    
+                    {% if researcher.google_scholar_url %}
+                    <a href="{{ researcher.google_scholar_url }}" target="_blank" class="social_icons"> <i class="fa fa-graduation-cap"></i></a>
+                    {% endif %}
+
                   </p>
+
+                  
 
                 </div>
               </div>
@@ -102,3 +127,6 @@
 
 
 {% endblock %}
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->

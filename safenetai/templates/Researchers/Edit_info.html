@@ -10,36 +10,51 @@
         <div class="card-header">
             <h3 class="Header_title">Edit Researcher Information</h3>
         </div>
-        {% if success_text %}
+        {% if sucess_text %}
         <div class="alert alert-success" role="alert">
-            {{ success_text }}
+            {{ sucess_text }}
         </div>
         {% endif %}
         {% if user.is_superuser or user.username == 'subadmin' %}
         <div class="card-body">
-            <form method="POST">
+            <form enctype="multipart/form-data" method="POST">
                 {{ edit_form.as_p }}
                 <script>
-                    document.addEventListener("DOMContentLoaded", function() {
+                    document.addEventListener("DOMContentLoaded", function () {
                         var inputs = document.querySelectorAll("input");
-                        inputs.forEach(function(input) {
+                        inputs.forEach(function (input) {
                             input.classList.add("form-control");
                             input.setAttribute("placeholder", "Enter " + input.name);
+                        });
+
+                        var checkboxes = document.querySelectorAll("input[type='checkbox']");
+                        checkboxes.forEach(function (checkbox) {
+                            checkbox.classList.remove("form-control");
                         });
                     });
                 </script>
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary">Update</button>
+                <div class="d-flex justify-content-center" style="align-items: center; width: 100%;">
+                    <button type="submit" class="btn btn-primary" style="width: 50%;">Update</button><br>
+                </div>
+                {% if user.is_superuser %}
+                <div class="d-flex justify-content-end mt-2">
+                    <a href="{% url 'Researchers:delete_info' researcher_id=researcher_id %}" class="btn btn-danger"
+                        onclick="return confirm('Delete This Member')">Delete</a>
+                </div>
+                {% endif %}
             </form><br>
-            {% if user.is_superuser %}
-                <a href="{% url 'Researchers:delete_info' researcher_id=researcher_id %}" class="btn btn-danger" onclick="return confirm('Delete This Member')"> Delete </a>
-            {% endif %}
         </div>
-        {% else %}
-        <div class="alert alert-danger" role="alert">
-            You do not have permission to view this page.
-        </div>
-        {% endif %}
+        {% csrf_token %}
+
+        </form><br>
+
     </div>
+    {% else %}
+    <div class="alert alert-danger" role="alert">
+        You do not have permission to view this page.
+    </div>
+    {% endif %}
+</div>
 </div>
 {% endblock %}

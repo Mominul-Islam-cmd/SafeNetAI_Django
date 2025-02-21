@@ -5,20 +5,18 @@ from Researchers import forms
 
 # Create your views here.
 def info_form(request):
-    new_form=forms.Researcher_form_Details()
+    new_form = forms.Researcher_form_Details()
 
     if request.method == 'POST':
-        new_form = forms.Researcher_form_Details(request.POST)
+        new_form = forms.Researcher_form_Details(request.POST, request.FILES)
 
         if new_form.is_valid():
             new_form.save(commit=True)
             return researcher_view(request)
         else:
             print('ERROR FORM INVALID', new_form.errors)
-    dict1 = {'test_form': new_form,'heading':'Add New Reseracher'}
+    dict1 = {'test_form': new_form, 'heading': 'Add New Researcher'}
 
-    # dict1={'title':new_form}
-    
     return render(request, 'Researchers/info_form.html', context=dict1)
 
 # info_form show
@@ -32,21 +30,23 @@ def researcher_view(request):
 # edit info_form
 
 
-def edit_info(request,researcher_id):
-   researchers_info=researcher_form.objects.get(pk=researcher_id)
-   form=forms.Researcher_form_Details(instance=researchers_info) 
-   diction={}
-   if request.method=="POST":
-         form=forms.Researcher_form_Details(request.POST,instance=researchers_info)
-    
-         if form.is_valid():
-              form.save(commit=True)
-              diction.update({'sucess_text':'Successfully Updated '})
+def edit_info(request, researcher_id):
+    researchers_info = researcher_form.objects.get(pk=researcher_id)
+    form = forms.Researcher_form_Details(instance=researchers_info)
+    diction = {}
+    if request.method == "POST":
+        form = forms.Researcher_form_Details(request.POST, request.FILES, instance=researchers_info)
 
-   diction.update({'edit_form':form})
-   diction.update({'researcher_id':researcher_id})
+        if form.is_valid():
+            form.save(commit=True)
+            # return researcher_view(request)
+            diction.update({'sucess_text': 'Successfully Updated '})
+            
 
-   return render(request,'Researchers/Edit_info.html',context=diction)
+    diction.update({'edit_form': form})
+    diction.update({'researcher_id': researcher_id})
+
+    return render(request, 'Researchers/Edit_info.html', context=diction)
 
 
 # Delete Research_Member
