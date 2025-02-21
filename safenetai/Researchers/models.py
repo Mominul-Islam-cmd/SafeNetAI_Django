@@ -21,6 +21,7 @@ class researcher_form(models.Model):
     session=models.CharField(max_length=100)
     interested_domain=models.CharField(max_length=200)
     experiences=models.CharField(max_length=200)
+    
     # join_date = models.DateField(default=datetime.date.today)
     # ratings=(
     # (1,"Active"),
@@ -39,6 +40,7 @@ class researcher_form(models.Model):
     github_url = models.URLField(blank=True)
     personal_website = models.URLField(blank=True)
     google_scholar_url = models.URLField(blank=True)
+
 
    
 

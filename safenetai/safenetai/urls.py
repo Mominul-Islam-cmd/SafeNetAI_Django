@@ -23,6 +23,7 @@ urlpatterns = [
     path("", include("About.urls")),
     path('Researchers/', include('Researchers.urls')),
     path('login_app/', include('login_app.urls')),
+    path('Guidelines/', include('Guidelines.urls')),
 
 ]
 
