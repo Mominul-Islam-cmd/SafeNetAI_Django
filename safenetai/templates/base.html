@@ -10,9 +10,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
     <style>
-.body_main {
+/* .body_main {
     background-image: url("{% static 'images/background.jpg' %}");
-}
+} */
     </style>
 </head>
 
@@ -57,6 +57,10 @@
                     <a class="nav-link" href="{% url 'login_app:login_page' %}">Login </a>
                 </li>
                 {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_app:login_users' %}">Users </a>
+                </li>
             </ul>
         </div>
     </nav>

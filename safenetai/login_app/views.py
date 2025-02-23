@@ -5,6 +5,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.contrib.auth.models import User
+from login_app.models import UserInfo
 # Create your views here.
 
 
@@ -81,3 +83,35 @@ def register_view(request):
     dict={'user_form':user_form, 'user_info_form':user_info_form, 'registered': registered}
 
     return render(request, 'login_app/register.html',context= dict)
+
+
+
+# Create login_users views here.
+# def login_users(request):
+#     dict = {}
+#     if request.user.is_authenticated:
+#         current_user = request.user
+#         user_id = current_user.id
+#         user_basic_info = User.objects.get(pk=user_id)
+#         try:
+#             user_more_info = UserInfo.objects.get(user__pk=user_id)
+#         except UserInfo.DoesNotExist:
+#             user_more_info = None
+
+#         dict = {'user_basic_info': user_basic_info, 'user_more_info': user_more_info}
+#     return render(request, "login_app/login_user_show.html", context=dict)
+
+#register viewer
+
+
+
+def login_users(request):
+    users = User.objects.all()
+    users_info = UserInfo.objects.all()
+
+    context = {
+        'users': users,
+        'users_info': users_info,
+    }
+
+    return render(request, 'login_app/login_user_show.html', context)
