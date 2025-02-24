@@ -10,11 +10,11 @@ class UserForm(forms.ModelForm):
         labels = {
             'username': 'Full Name',
             'email': 'Email Address',
-            'password': 'Password'
+            'password': 'Password',
+           
         }
         help_texts = {
             'username': None,
-           
         }
 
 

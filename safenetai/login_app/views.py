@@ -41,6 +41,19 @@ def user_login(request):
     #    return render(request, 'login_app/login.html',context= {})
 
 
+
+
+# last_login_user
+# @login_required
+# def last_login_user(request):
+#     last_login = None
+#     if request.user.is_authenticated:
+#         last_login = request.user.last_login
+
+#     return render(request, 'login_app/login_user_show.html', {'last_login': last_login})
+
+
+
 def index(request):
     return render(request, 'login_app/index.html',context= {})
 

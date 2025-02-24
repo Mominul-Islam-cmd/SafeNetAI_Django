@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 
 # Create your models here.
 
@@ -20,3 +21,6 @@ class UserInfo(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+    date_joined = models.DateTimeField(default=timezone.now)
+    last_login=models.DateTimeField(default=timezone.now)
