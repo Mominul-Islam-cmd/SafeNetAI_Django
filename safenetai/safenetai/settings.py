@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "Researchers",
     "Guidelines",
     "login_app",
+    "About",
 
 ]
 

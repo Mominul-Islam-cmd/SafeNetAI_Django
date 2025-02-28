@@ -6,21 +6,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> SafeNet.AI </title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="{% static 'Researchers/info_show.css' %}" rel="stylesheet">
     <style>
-/* .body_main {
-    background-image: url("{% static 'images/background.jpg' %}");
-} */
+     
+
+        .navbar-nav .nav-item {
+            margin-right: 10px; /* Reduce space between navbar items */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #fffcfc;
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            padding: 5px 10px; /* Reduce padding for hover box */
+            font-size: 0.9rem; /* Reduce font size */
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #fff;
+            background-color: #54465a; /* Hover box effect */
+            border-radius: 5px; /* Rounded corners for hover box */
+            padding: 10px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #866e6e;
+        }
+
+        .navbar-brand:hover {
+            color: #000;
+        }
+
+
+    
     </style>
 </head>
 
-<body class="body_main"
-    style="background-color:#f8faff;  background-attachment: fixed; background-size: cover; background-position: center;">
+<body class="body_main">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'login_app:register_view' %}" style="font-weight: bold; font-size: 1.5rem; color: #be0a0a;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #507ca0;">
+        <a class="navbar-brand" href="{% url 'About:home' %} " style="color: rgb(66, 11, 102);">
             <img src="{% static 'images/logo.png' %}" class="rounded-circle" width="50px" alt="Logo"> SafeNet.AI
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -28,55 +59,52 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'About:about_us' %}">About Us </span></a>
+            <ul class="navbar-nav ml-auto"> <!-- Add ml-auto class here -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'About:about_us' %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Contact Us</a>
+                    <a class="nav-link" href="{% url 'About:home' %}">Home</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Researchers:researcher_view' %}">RESEACHERS</a>
+                    <a class="nav-link" href="{% url 'Researchers:researcher_view' %}">RESEARCHERS</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_app:register_view' %}">Guidelines</a>
-                </li> -->
+             
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Guidelines:guidelines_cards' %}">Guidelines</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'PublicationProject:publication_view' %}">Projects & Publications </a>
+                    <a class="nav-link" href="{% url 'PublicationProject:publication_view' %}">Projects & Publications</a>
                 </li>
-
+           
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_app:user_logout' %}">Logout </a>
+                    <a class="nav-link" href="{% url 'login_app:user_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_app:login_page' %}">Login </a>
+                    <a class="nav-link" href="{% url 'login_app:login_page' %}">Login</a>
                 </li>
                 {% endif %}
-             
+                {% if user.is_superuser%}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_app:login_users' %}">Users </a>
+                    <a class="nav-link" href="{% url 'login_app:login_users' %}">Users</a>
                 </li>
-             
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_app:login_users' %}">FeedBack </a>
-                </li> -->
+                {% endif %}
             </ul>
         </div>
     </nav>
-    {% block body_block %}
-
-    {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
-
-</html>
+{% block body_block %}
+{% endblock %}

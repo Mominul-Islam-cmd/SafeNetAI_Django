@@ -10,9 +10,9 @@
 
 <section id="team" class="pb-5">
   <div class="container">
-    <h5 class="section-title h1">RESEARCHERS</h5>
+    <h5 class="section-title h1">Team member</h5>
     <div class="row">
-      {% for researcher in Researchers_list|dictsort:"id"  %}
+      {% for member in team_list|dictsort:"id"  %}
       <!-- Team Member -->
       <div class="col-12 col-sm-6 col-md-4">
         <div class="image-flip">
@@ -22,18 +22,23 @@
               <div class="card">
                 <div class="card-body text-center">
                   <p>
-                    <img class="img-fluid" src="{% if researcher.profile_pic %}{{ researcher.profile_pic.url }}{% else %}{% static 'images/default_profile.png' %}{% endif %}" alt="card image">
+                    <img class="img-fluid" src="{% if member.profile_pic %}{{ member.profile_pic.url }}{% else %}{% static 'images/default_profile.png' %}{% endif %}" alt="card image">
                   </p>
-                  <h4 class="card-title">{{ researcher.first_Name }} {{researcher.last_Name}} </h4>
+                  <h4 class="card-title">{{ member.first_Name }} {{member.last_Name}} </h4>
                   <p class="card-text">
-                    <strong>Current project:</strong> {{ researcher.current_project }}
+                    <strong>Current job:</strong> {{ member.current_job }}
                   </p>
 
-                  <p> <i class="fa fa-user"></i></p>
+                  <p class="card-text">
+                    <strong>work_experience:</strong> {{ member.work_experience }}
+                  </p>
+                  <p class="card-text">
+                    <strong>Role:</strong> {{ member.Role }}
+                  </p>
+
+                  <!-- <p> <i class="fa fa-user"></i></p> -->
                 </div>
-                <p class="card-text">
-                  <strong>Ratings:</strong> {{ researcher.Ranking }} %
-                </p>
+           
               </div>
 
             </div>
@@ -41,43 +46,41 @@
             <div class="backside">
               <div class="card">
                 <!-- edit_button -->
-                {% if user.is_superuser or user.username == 'subadmin' %}
+                <!-- {% if user.is_superuser or user.username == 'subadmin' %}
                 <a href="{% url 'Researchers:edit_info' researcher_id=researcher.id %}" class="edit_button"> <input type="button" value="Edit" name="Edit" class="btn btn-primary">
                 </a>
-                {% endif %}
+                {% endif %} -->
                 <!-- edit_button -->
                 <div class="card-body text-center mt-4">
-                    <!-- <h4 class="card-title"> <a href="{% url 'Researchers:research_student_recommendation_show' researcher_id=researcher.id  %}">  {{ researcher.first_Name }} {{researcher.last_Name}} </a> </h4> -->
                   
-                    <h5 class="card-title">  {{ researcher.first_Name }} {{researcher.last_Name}} </h5>
+                    <h5 class="card-title">  {{ member.first_Name }} {{member.last_Name}} </h5>
 
                     <p class="card-text">
-                    <strong>University:</strong> {{ researcher.uv_name }}<br>
-                    <strong>Department:</strong> {{ researcher.dept_name }}<br>
-                    <strong>Research Interests:</strong> {{ researcher.interested_domain }}<br>
-                    <strong>Experiences:</strong> {{ researcher.experiences }}<br>
-                    <strong>Session:</strong> {{ researcher.session }}
+                    <strong>University:</strong> {{ member.uv_name }}<br>
+                    <strong>Department:</strong> {{ member.dept_name }}<br>
+                    <strong>Domain_expertise:</strong> {{ member.domain_expertise }}<br>
+           
                   </p>
                   <p>
 <!--               
                     <a href="{{ researcher.github_url }}" class="social_icons"> <i class="fa fa-github"></i></a>
                     <a href="{{ researcher.personal_site_url }}" class="social_icons"> <i class="fa fa-globe"></i></a>
                     <a href="{{ researcher.linekdin_url }}" class="social_icons"> <i class="fa fa-linkedin"></i></a> -->
-                    {% if researcher.github_url %}
+                    {% if member.github_url %}
                     <a href="{{ researcher.github_url }}" target="_blank" class="social_icons"> <i class="fa fa-github"></i></a>
                     {% endif %}
   
-                    {% if researcher.personal_website %}
-                    <a href="{{ researcher.personal_website }}" target="_blank" class="social_icons"> <i class="fa fa-globe"></i></a>
+                    {% if member.personal_website %}
+                    <a href="{{ member.personal_website }}" target="_blank" class="social_icons"> <i class="fa fa-globe"></i></a>
                     {% endif %}
   
-                    {% if researcher.linekdin_url %}
-                    <a href="{{ researcher.linekdin_url }}" target="_blank" class="social_icons"> <i class="fa fa-linkedin"></i></a>
+                    {% if member.linekdin_url %}
+                    <a href="{{ member.linekdin_url }}" target="_blank" class="social_icons"> <i class="fa fa-linkedin"></i></a>
                     {% endif %}
                   
              
                     
-                    {% if researcher.google_scholar_url %}
+                    {% if member.google_scholar_url %}
                     <a href="{{ researcher.google_scholar_url }}" target="_blank" class="social_icons"> <i class="fa fa-graduation-cap"></i></a>
                     {% endif %}
 
@@ -94,7 +97,7 @@
       {% endfor %}
 
       <!-- Add Member Card -->
-      {% if user.is_superuser or user.is_subadmin %}
+   
       <div class="col-12 col-sm-6 col-md-4">
         <div class="image-flip1">
           <div class="mainflip flip-0">
@@ -106,19 +109,17 @@
           </p>
           <!-- <h4 class="card-title">Add New Member</h4> -->
           <p class="card-text"></p>
-        <a href="{% url 'Researchers:info_form' %}" class="btn btn-primary">Add New Member</a>
+        <a href="{% url 'About:team_info_form' %}" class="btn btn-primary">Add New Team Member</a>
           </p>
 
-          <p class="card-text">
-        <a href="{% url 'Researchers:recommend_form'%}" class="btn btn-primary btn-sm"> Researchers Details </a>
-          </p>
+         
         </div>
           </div>
         </div>
           </div>
         </div>
       </div>
-      {% endif %}
+
 
 
     </div>

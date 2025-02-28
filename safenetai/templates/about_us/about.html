@@ -2,604 +2,173 @@
 {% block body_block %}
 {% load static %}
 <style>
-    body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: rgb(252, 252, 252);
-    background-image: url('images/pexels-rostislav-5011647.jpg');
-}
-
-.occ,
-.pb,
-.ed,
-.ab,
-.sk,
-.pro,
-.cg,
-.con {
-
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px;
-    color: rgb(8, 3, 3);
-
-}
-
-
-
-
-#aboutme{
-    color: rgb(252, 246, 255);
-}
-.skillbody{
-    color: rgb(252, 246, 255);
-}
-
-.skill{
-    color: rgb(252, 246, 255);
-}
-
-.sk_d{
-    color: rgb(247, 209, 238);
-}
-
-
-/* ......bannar ITEMS............. */
-
-/* .bannar_container {
-    background-color: rgb(169, 189, 206);
-}
-
-.banner_text {
-    background-color: rgb(53, 71, 87);
-}
-
-.banner_column {
-    background-color: rgb(146, 158, 150);
-    color: aliceblue;
-    text-align: center;
-
-} */
-
-.bannar_body {
-    background-color: lightgray;
-    height: 200px;
-}
-
-.typing,
-.typing-1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 510;
-    color: red;
-
-
-}
-
-.bannar_items {
-    width: 50%;
-    height: 60%;
-    margin: 50px;
-    margin-left: 25%;
-    background-color: #dde4eb;
-    text-align: center;
-    border-radius: 5px;
-}
-
-
-
-@keyframes animate {
-
-    40%,
-    60% {
-        left: 100%;
+    .custom-card {
+        background-color: #f7fafc;
+        /* Tailwind gray-100 */
+        border-radius: 0.75rem;
+        /* rounded-xl */
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        transition: box-shadow 0.5s;
     }
 
-    100% {
-        left: 0%;
-    }
-}
-
-
-
-.about_part {
-    text-align: center;
-    margin: 10px;
-}
-
-.abme {
-    font-size: 30px;
-    font-weight: 510;
-}
-
-.wai {
-    font-size: 15px;
-    font-weight: bold;
-    color: red;
-}
-
-/* .................navbar items................... */
-
-.nav-item {
-    margin-right: 30px;
-
-}
-
-.nav-link {
-    color: rgba(189, 10, 10, 0.925);
-}
-
-.ml {
-
-    background-color: antiquewhite;
-    padding: 5px;
-
-
-}
-
-/* ......nav button........ */
-
-.ab,
-.ed,
-.sk,
-.pb,
-.occ,
-.pro,
-.cg,
-.con {
-    background-color: #064f94;
-    color: #dde4eb;
-    opacity: 0.8;
-}
-
-/* ................nav bar hover........................... */
-
-.abo:hover {
-    background-color: steelblue !important;
-
-    /* text-align: center; */
-    transition: 1s;
-    /* border: 2px solid steelblue; */
-    color: #fff2fe;
-    /* font-size: larger; */
-    /* font-weight: bolder; */
-
-
-}
-
-/*
-.occ:hover {
-    background-color: steelblue !important;
-    height: 78px;
-    width: 200px;
-    text-align: center;
-    padding-top: 5px;
-    transition: 1s;
-
-    color: #dae1e7;
-    font-size: larger;
-    font-weight: bolder;
-
-
-} */
-
-/* ........................................................... */
-
-
-.espam_header {
-    font-family: 'Open Sans', sans-serif;
-    /* background-color: rgb(108, 108, 151); */
-    color: rgba(11, 59, 134, 0.829);
-    border-radius: 5px;
-    padding: 5px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.site {
-    margin-left: 100px;
-    width: 100px;
-
-}
-
-
-
-/* ...........About section................ */
-
-.aboutdetails_text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    text-align: justify;
-}
-
-.abname {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-
-/* education section design */
-
-
-
-
-.education-container {
-    background-color: rgb(235, 240, 240);
-    border-radius: 3px;
-    margin-bottom: 10px;
-}
-
-.edu_title {
-    text-align: center;
-    margin: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
-    color: red;
-
-}
-
-.edu_icon {
-    margin-left: 10px;
-    margin-top: 50px;
-    width: 100px;
-    align-items: center;
-}
-
-.edu_details {
-    background-color: #ccc;
-    width: 95%;
-    height: 90%;
-    margin-top: 0px;
-    margin-left: 90px;
-    border-radius: 6px;
-    padding: 35px;
-
-}
-
-.edu_date {
-    opacity: 0.5;
-    font-style: italic;
-}
-
-.Degree {
-    font-size: large;
-    font-weight: 550;
-    margin-top: 5px;
-    margin-bottom: 3px;
-    font-style: italic;
-}
-
-.UV{
-    font-size: larger;
-    font-weight: 650;
-    margin-top: 5px;
-    margin-bottom: 3px;
-
-}
-
-.result {
-    margin-bottom: 3px;
-    font-weight: 400;
-    font-style: oblique;
-}
-
-.thesis_title {
-    font-weight: 510;
-    font-style: italic;
-}
-
-/* SKILLS SECTION */
-.sktext {
-    font-size: 15px;
-    font-size: large;
-    font-weight: bold;
-
-
-}
-
-.skillheader_text {
-    padding: 10px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.skillheadr_body {
-
-    background-color: #6d98c0;
-    text-align: center;
-    border-radius: 4px;
-}
-
-.skillbody {
-    margin-top: 30px;
-}
-
-
-
-
-
-
-
-.skills {
-    width: 100%;
-    max-width: 500px;
-    padding: 0 10px;
-}
-
-.skill-name {
-    font-size: 14px;
-    font-weight: 400;
-    color: #120303;
-    text-transform: uppercase;
-    margin-top: 15px;
-    margin-bottom: 2px;
-
-}
-
-.skill-bar {
-    height: 14px;
-    margin-top: 0px;
-    background-color: rgb(20, 126, 220, 0.2);
-    border-radius: 3px;
-}
-
-.skill-per {
-    height: 14px;
-    background-color: #0773d9;
-    color: white;
-    border-radius: 3px;
-    position: relative;
-    animation: fillBars;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-}
-
-.skill-per::before {
-    content: attr(per);
-    position: absolute;
-    padding: 2px 3px;
-    background: #09a4ec;
-    border-radius: 4px;
-    font-size: 10px;
-    top: -28px;
-    right: 0;
-    z-index: 1;
-    transform: translateX(50%);
-}
-
-.skill-per::after {
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 15px;
-    background: #09a4ec;
-    top: -20px;
-    right: -2px;
-    z-index: -1;
-    transform: translateX(50%) rotate(45deg);
-    border-radius: 2px;
-}
-
-
-@keyframes fillBars {
-    from {
-        width: 0;
+    .custom-card:hover {
+        box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
     }
 
-    to {
-        width: 100%;
+    .custom-card .profile-img {
+        width: 8rem;
+        /* ~w-32 */
+        height: 8rem;
+        /* ~h-32 */
+        border-radius: 50%;
+        object-fit: cover;
+        transition: width 0.5s, height 0.5s;
     }
-}
 
+    .custom-card:hover .profile-img {
+        width: 9rem;
+        /* ~w-36 */
+        height: 9rem;
+        /* ~h-36 */
+    }
 
-/* ...........................info details.................... */
-.dgetit {
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    .custom-card .info h3 {
+        color: #4a5568;
+        /* Tailwind gray-600 */
+        font-weight: bold;
+    }
 
-.permanentaddress {
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-}
+    .custom-card .info h4 {
+        color: #4a5568;
+        /* Tailwind gray-600 */
+        font-weight: bold;
+    }
 
-.icon {
-    padding: 10px;
-}
+    .custom-card .info p {
+        color: #a0aec0;
+        /* Tailwind gray-400 */
+        font-size: 15px;
+    }
 
-.adrress_icon,
-.name_icon {
-    width: 20px;
-}
+    .custom-card .info a.experience {
+        font-size: 0.75rem;
+        /* text-xs */
+        color: #718096;
+        /* Tailwind gray-500 */
+        opacity: 0;
+        transition: opacity 0.5s 0.3s;
+        text-decoration: none;
+    }
 
-/*........................... footer section ...................*/
-.footer {
-    width: 100%;
-    margin-top: 20px;
-    background-color: rgb(235, 240, 240);
-    padding: 20px;
-}
+    .custom-card:hover .info a.experience {
+        opacity: 1;
+    }
 
-.footerheading_text {
-    text-align: center;
-    font-weight: bold;
-}
+    .custom-card .social-links {
+        position: absolute;
+        right: 0.25rem;
+        /* equivalent to right-1 */
+        bottom: -4rem;
+        /* starting off-screen (-bottom-16) */
+        background-color: #4a5568;
+        /* Tailwind gray-600 */
+        border-radius: 0.5rem;
+        padding: 0.1rem;
+        transition: bottom 0.5s 0.3s;
+    }
 
-.git {
-    text-align: center;
-    color: red;
-    font-size: 18px;
-}
+    .custom-card:hover .social-links {
+        bottom: 0.25rem;
+        /* slides up (bottom-1) */
+    }
 
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-}
-
-.sc {
-    margin-right: 20px;
-    margin-top: 15px;
-
-}
-
-.copyright {
-    text-align: center;
-    margin-top: 15px;
-    color: white;
-}
-
-
-.designer {
-    opacity: 0.7;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin: 0px 5px;
-
-
-}
-
-
-/* .....................message items............. */
-
-
-
-
-.msm {
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-input[type=text] {
-    padding: 8px 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
-input[type=text]:focus {
-    border: 1px solid lightgray
-}
-
-textarea[type=text] {
-    padding: 8px 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
-textarea[type=text]:focus {
-    border: 1px solid lightgray
-}
-
-
-.emailsubject,
-.emaildescribe {
-    width: 90%;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: solid 1px lightgrey;
-}
-
-.emailsubject:hover {
-    border-color: #0773d9;
-}
-
-.clientemail:hover {
-    border-color: #0773d9;
-}
-
-.clientname:hover {
-    border-color: #0773d9;
-}
-
-.emaildescribe:hover {
-    border-color: #0773d9;
-
-}
-
-.clientname,
-.clientemail {
-    width: 45%;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-.massagesubmit {
-    margin-left: 400px;
-}
-
-
-
-/* another contact information template */
-.footer-section {
-    background-color: #f8f9fa;
-}
-
-.footer-title {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.footer-description {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-.contact-details {
-    margin-top: 30px;
-}
-
-.contact-item {
-    margin-bottom: 20px;
-}
-
-.custom-icon i {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.custom-icon i:hover {
-    transform: scale(1.2);
-    color: #0d6efd;
-}
-
-.contact-title {
-    font-weight: 600;
-    margin: 10px 0;
-}
-
-.contact-text {
-    margin: 0;
-    color: #333;
-}
-
-@media (max-width: 576px) {
-    .footer-title {
+    .custom-card .social-links a {
+        color: #fff;
         font-size: 1.5rem;
+        margin-left: 0.5rem;
     }
 
-    .footer-description {
-        font-size: 0.9rem;
+    .custom-card .social-links a:first-child {
+        margin-left: 0;
     }
-}
+
+
+
+    /* ..members_card */
+
+
+    .flip-card {
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .flip-card-front {
+        background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        transition: background 0.3s ease;
+    }
+
+    .flip-card:hover .flip-card-front {
+        background: linear-gradient(to bottom, #f0f4f8, #e2e8f0);
+    }
+
+    .flip-card-back {
+        background: linear-gradient(to bottom, #2a6d72, #35445c);
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* .flip-card-back a {
+        background: rgba(189, 4, 4, 0.2);
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+        color: white;
+        text-decoration: none;
+    } */
 </style>
+
+
+<link href="{% static 'about_us/text.css' %}" rel="stylesheet">
 
 <!-- <link href="{% static 'about_us/about_us.css' %}" rel="stylesheet"> -->
 
-<div class="container-fluid row bannar_body text-center" style="background-color: transparent;">
+<div class="container-fluid row bannar_body text-center">
 
-    <div class="bannar_items" id="main_about" style="background-color: transparent;">
+    <div class="bannar_items" id="main_about" style="background: transparent;">
         <h1 style="font-family: 'Overpass', sans-serif; color: white; text-shadow: 2px 2px 4px #000000;">SafeNet AI
         </h1>
-        <h4 class="tpyebefore"> <span class="typing"
-                style="color: white; text-shadow: 2px 2px 4px #000000;">Research </span>
+        <h4 class="tpyebefore"> <span class="typing" style="color: white; text-shadow: 2px 2px 4px #000000;">Research
+            </span>
         </h4>
 
     </div>
@@ -619,160 +188,313 @@ textarea[type=text]:focus {
     </div> -->
 
 
-<div class="row align-items-center justify-content-center " 
-    style="background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto;">
-
-    <div class="col-12" style="color: white;">
-
-        <h2 class="abname" style="font-family: 'Christmas Friday', sans-serif;">Empowering Research, Enabling
-            Innovation </h2>
-        <p>Join a collaborative platform for AI, NLP, and Computer Vision research and projects. </p>
-        <p class="aboutdetails_text">
-            At SafeNet, we believe research should be accessible to everyone, regardless of background or academic
-            level. Our mission is to foster a collaborative environment where ideas meet innovation, and passion
-            fuels progress.
-
-            Join us as we explore the frontiers of AI, NLP, and Computer Vision through groundbreaking research and
-            meaningful collaborations. Whether you're a student, researcher, or industry professional, there's a
-            place for you here.
-
-            Together, let's shape the future of technology—one project at a time.
-
-        </p>
-        <!-- New Action Buttons -->
-        <div class="d-flex justify-content-center gap-4 mt-5">
-            <a href="project and research\project_publication.html" target="_blank"
-                class="btn btn-primary btn-lg px-4 py-3" style="font-size: 1.2rem; font-weight: 600; color: white;">
-                Explore Our Research
-            </a>
-            <a href="https://www.facebook.com/groups/1718596145212523" target="_blank"
-                class="btn btn-success btn-lg px-4 py-3" style="font-size: 1.2rem; font-weight: 600; color: white;">
-                Join Our Community
-            </a>
-        </div>
-
-    </div>
-</div>
-</div>
-
-
-
-
-<!-- skill Section -->
-
-
-<div class="container container-fluid mainskillbody" id="mainskillbody"
-    style="color: white; background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto; margin-top: 20px;">
-
-    <div class="container skillheadr_body " style="color: white;">
-        <h2 class="skillheader_text">Our Research Domains</h2>
-        <p>We focus on cutting-edge technologies and emerging fields in AI research, including:</p>
-    </div>
-
-    <div class="row skillbody" style="color: white;">
-        <!-- Research Domains -->
-        <div class="col-lg-12">
-            <div style="padding-left: 20px;">
-                <h4 class="sktext">Machine Learning (ML)</h4>
-                <p>Building intelligent systems through data-driven models.</p>
-                <h4 class="sktext">Deep Learning (DL)</h4>
-                <p>Exploring advanced neural network architectures.</p>
-                <h4 class="sktext">Natural Language Processing (NLP)</h4>
-                <p>Enabling machines to understand and process human language.</p>
-                <h4 class="sktext">Computer Vision (CV)</h4>
-                <p>Teaching machines to interpret and understand visual data.</p>
-                <h4 class="sktext">Large Language Models (LLMs)</h4>
-                <p>Developing models that power intelligent conversational AI.</p>
-            </div>
+<!-- Our Focus Section -->
+<div class="container mt-4 p-4"
+    style="background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <div class="row align-items-center justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="abname text-center" style="font-family: 'Christmas Friday', sans-serif;"><u><strong>Welcome to
+                        Our Community</strong></u></h2>
+            <p style="text-align: left;">We are more than just a website; we are a thriving community of researchers,
+                scholars, and innovators committed to advancing knowledge in machine learning, AI, and cutting-edge AI
+                models like LLM and GPT. Our mission is to make research accessible to all, bridging the gap between
+                complex theories and practical applications.</p>
         </div>
     </div>
 </div>
+
+<!-- Our Focus Section -->
+<div class="container mt-4 p-4"
+    style="background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <div class="row align-items-center justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="abname text-center" style="font-family: 'Christmas Friday', sans-serif;"><u><strong>Our
+                        Focus</strong></u></h2>
+            <ul style="text-align: left;">
+                <li><strong>Innovative Research:</strong> We delve into the depths of machine learning and AI, exploring
+                    new frontiers and pushing the boundaries of what's possible.</li>
+                <li><strong>Collaboration:</strong> We believe in the power of teamwork. By bringing together brilliant
+                    minds, we foster a space for sharing ideas, sparking innovation, and driving progress.</li>
+                <li><strong>Accessible Knowledge:</strong> We aim to democratize research, ensuring that complex
+                    information is available and understandable for everyone.</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-
+<!-- Our Vision Section -->
+<div class="container mt-4 p-4"
+    style="background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <div class="row align-items-center justify-content-center mt-4">
+        <div class="col-12">
+            <h2 class="abname text-center" style="font-family: 'Christmas Friday', sans-serif;"><u><strong>Our
+                        Vision</strong></u></h2>
+            <p style="text-align: left;">We aim to build a collaborative community for researchers, both seasoned and
+                new, to share knowledge, resources, and guidance. Our goal is to ensure that every member can conduct
+                research efficiently and with confidence, benefiting from the collective expertise of the group.
+                Together, we strive to be a beacon for future researchers, providing a foundation for meaningful and
+                impactful work.</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container-fluid "
+    style="text-align: center; color: #418aeb; margin-top: 10px;font-style: italic;font-family: 'Courier New', Courier, monospace; font-weight: 900;font-size: 50px;">
+    <p>Team Members </p>
+</div>
 <!-- .................................................................................................................... -->
+<!-- co-founder section -->
+<div class="container py-5">
+    <div class="row justify-content-center">
 
 
+        <div class="container-fluid mt-4 p-4">
+            <div class="row justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="custom-card">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="/static/co_founder/mominul.png" alt="Profile Image" class="profile-img">
+                            <div class="info">
+                                <h3>Mominul Islam</h3>
+                                <p style="margin-bottom: 0%;">Co-Founder &amp; CEO, <small>SafeNet.ai</small></p>
+                                <a href="#" class="experience">4 years Research Experience</a>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <!-- Google Scholar -->
+                            <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+                                    <path fill="#1e88e5"
+                                        d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z">
+                                    </path>
+                                    <path fill="#1565c0" d="M35,16.592v-3.878L37,11H27l0.917,1.833c-1.236,0-2.265,0-2.265,0S19.095,13,19.095,18.748
+                  c0,5.752,5.732,5.088,5.732,5.088s0,0.865,0,1.453c0,0.594,0.77,0.391,0.864,1.583c-0.388,0-7.964-0.208-7.964,4.998
+                  s6.679,4.959,6.679,4.959s7.722,0.365,7.722-6.104c0-3.871-4.405-5.121-4.405-6.686c0-1.563,3.319-2.012,3.319-5.684
+                  c0-0.823-0.028-1.524-0.149-2.12L34,13.571v3.02c-0.581,0.207-1,0.756-1,1.408v4.5c0,0.829,0.672,1.5,1.5,1.5s1.5-0.671,1.5-1.5V18
+                  C36,17.348,35.581,16.799,35,16.592z M30.047,31.169c0.131,2.024-1.929,3.811-4.603,3.998c-2.671,0.188-4.946-1.295-5.077-3.316
+                  c-0.133-2.016,1.927-3.805,4.6-3.996C27.641,27.667,29.914,29.152,30.047,31.169z M26.109,22.453
+                  c-1.592,0.451-3.375-1.062-3.982-3.367c-0.604-2.312,0.195-4.543,1.786-4.992c1.593-0.453,3.374,1.059,3.981,3.367
+                  C28.499,19.77,27.702,22.004,26.109,22.453z"></path>
+                                    <path fill="#e8eaf6" d="M34,16.592V12c0-0.051-0.015-0.097-0.029-0.143L35,11H21l-9,8h5.383
+                  c0.174,5.466,5.715,4.836,5.715,4.836s0,0.865,0,1.453c0,0.594,0.771,0.391,0.865,1.583c-0.388,0-7.964-0.208-7.964,4.998
+                  s6.679,4.959,6.679,4.959s7.721,0.365,7.721-6.104c0-3.871-4.404-5.121-4.404-6.686c0-1.563,3.318-2.012,3.318-5.684
+                  c0-0.971-0.047-1.763-0.232-2.422L33,12.667v3.925c-0.581,0.207-1,0.756-1,1.408v4.5c0,0.829,0.672,1.5,1.5,1.5s1.5-0.671,1.5-1.5
+                  V18C35,17.348,34.581,16.799,34,16.592z M28.319,31.169c0.131,2.024-1.928,3.811-4.602,3.998c-2.671,0.188-4.946-1.295-5.077-3.316
+                  c-0.133-2.016,1.927-3.805,4.599-3.996C25.914,27.667,28.187,29.152,28.319,31.169z M24.38,22.453
+                  c-1.591,0.451-3.373-1.062-3.981-3.367c-0.604-2.312,0.194-4.543,1.785-4.992c1.593-0.453,3.374,1.059,3.982,3.367
+                  C26.77,19.77,25.973,22.004,24.38,22.453z"></path>
+                                </svg>
+                            </a>
+                            <!-- Personal Website -->
+                            <a href="https://www.personalwebsite.com" target="_blank" aria-label="Personal Website">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18
+                  c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                                </svg>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                                <svg fill="currentColor" viewBox="0 0 16 16" width="25" height="25">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0 0 3.603 0 8.05c0 4.017 2.926 7.347 6.75 7.951
+                  v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009
+                  c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                                <svg viewBox="0 0 960 1000" fill="currentColor" width="25" height="25">
+                                    <path d="M480 20c133.333 0 246.667 46.667 340 140s140 206.667 140 340c0 132-46.667 245-140 339S613.333
+                  980 480 980c-132 0-245-47-339-141S0 632 0 500c0-133.333 47-246.667 141-340S348 20 480 20M362 698V386h-96v312h96
+                  m-48-352c34.667 0 52-16 52-48s-17.333-48-52-48c-14.667 0-27 4.667-37 14s-15 20.667-15 34c0 32 17.333 48 52 48
+                  m404 352V514c0-44-10.333-77.667-31-101s-47.667-35-81-35c-44 0-76 16.667-96 50h-2l-6-42h-84c1.333 18.667 2 52 2 100v212h98V518
+                  c0-12 1.333-20 4-24 8-25.333 24.667-38 50-38 32 0 48 22.667 48 68v174h98" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 (Duplicate or modify as needed) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="custom-card">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="/static/co_founder/Opi2.jpg" alt="Profile Image" class="profile-img">
+                            <div class="info">
+                                <h4>Md Sanjid Hossain</h4>
+                                <p style="margin-bottom: 0%;">Co-Founder &amp; CTO, <small>SafeNet.ai</small></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- .....anpther contact template -->
-
-<div class="custom-container footer-section" id="custom-contact"
-    style="background-color: #f8f9fa; padding: 50px 0;">
-    <h4 class="text-center footer-title" style="font-weight: bold; color: #0d6efd;">Contact Us</h4>
-    <p class="text-center footer-description" style="opacity: 0.8; font-size: 18px;">We’d love to hear from you! Get
-        in touch through the details below.</p>
-
-    <div class="row text-center contact-details" style="margin-top: 30px;">
-        <!-- Name Section -->
-        <div class="col-md-3 col-sm-6 mb-4 contact-item">
-            <div class="custom-icon" style="color: #1965c8; font-size: 2rem;">
-                <i class="fa-solid fa-address-book"></i>
+                                <a href="#" class="experience">3 years Research Experience</a>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <!-- Repeat social icons as above -->
+                            <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+                                    <path fill="#1e88e5"
+                                        d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z">
+                                    </path>
+                                    <path fill="#1565c0" d="M35,16.592v-3.878L37,11H27l0.917,1.833c-1.236,0-2.265,0-2.265,0S19.095,13,19.095,18.748
+                  c0,5.752,5.732,5.088,5.732,5.088s0,0.865,0,1.453c0,0.594,0.77,0.391,0.864,1.583c-0.388,0-7.964-0.208-7.964,4.998
+                  s6.679,4.959,6.679,4.959s7.722,0.365,7.722-6.104c0-3.871-4.405-5.121-4.405-6.686c0-1.563,3.319-2.012,3.319-5.684
+                  c0-0.823-0.028-1.524-0.149-2.12L34,13.571v3.02c-0.581,0.207-1,0.756-1,1.408v4.5c0,0.829,0.672,1.5,1.5,1.5s1.5-0.671,1.5-1.5V18
+                  C36,17.348,35.581,16.799,35,16.592z M30.047,31.169c0.131,2.024-1.929,3.811-4.603,3.998c-2.671,0.188-4.946-1.295-5.077-3.316
+                  c-0.133-2.016,1.927-3.805,4.6-3.996C27.641,27.667,29.914,29.152,30.047,31.169z M26.109,22.453
+                  c-1.592,0.451-3.375-1.062-3.982-3.367c-0.604-2.312,0.195-4.543,1.786-4.992c1.593-0.453,3.374,1.059,3.981,3.367
+                  C28.499,19.77,27.702,22.004,26.109,22.453z"></path>
+                                    <path fill="#e8eaf6" d="M34,16.592V12c0-0.051-0.015-0.097-0.029-0.143L35,11H21l-9,8h5.383
+                  c0.174,5.466,5.715,4.836,5.715,4.836s0,0.865,0,1.453c0,0.594,0.771,0.391,0.865,1.583c-0.388,0-7.964-0.208-7.964,4.998
+                  s6.679,4.959,6.679,4.959s7.721,0.365,7.721-6.104c0-3.871-4.404-5.121-4.404-6.686c0-1.563,3.318-2.012,3.318-5.684
+                  c0-0.971-0.047-1.763-0.232-2.422L33,12.667v3.925c-0.581,0.207-1,0.756-1,1.408v4.5c0,0.829,0.672,1.5,1.5,1.5s1.5-0.671,1.5-1.5
+                  V18C35,17.348,34.581,16.799,34,16.592z M28.319,31.169c0.131,2.024-1.928,3.811-4.602,3.998c-2.671,0.188-4.946-1.295-5.077-3.316
+                  c-0.133-2.016,1.927-3.805,4.599-3.996C25.914,27.667,28.187,29.152,28.319,31.169z M24.38,22.453
+                  c-1.591,0.451-3.373-1.062-3.981-3.367c-0.604-2.312,0.194-4.543,1.785-4.992c1.593-0.453,3.374,1.059,3.982,3.367
+                  C26.77,19.77,25.973,22.004,24.38,22.453z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.personalwebsite.com" target="_blank" aria-label="Personal Website">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18
+                  c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                                </svg>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                                <svg fill="currentColor" viewBox="0 0 16 16" width="25" height="25">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0 0 3.603 0 8.05c0 4.017 2.926 7.347 6.75 7.951
+                  v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009
+                  c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                                <svg viewBox="0 0 960 1000" fill="currentColor" width="25" height="25">
+                                    <path d="M480 20c133.333 0 246.667 46.667 340 140s140 206.667 140 340c0 132-46.667 245-140 339S613.333
+                  980 480 980c-132 0-245-47-339-141S0 632 0 500c0-133.333 47-246.667 141-340S348 20 480 20M362 698V386h-96v312h96
+                  m-48-352c34.667 0 52-16 52-48s-17.333-48-52-48c-14.667 0-27 4.667-37 14s-15 20.667-15 34c0 32 17.333 48 52 48
+                  m404 352V514c0-44-10.333-77.667-31-101s-47.667-35-81-35c-44 0-76 16.667-96 50h-2l-6-42h-84c1.333 18.667 2 52 2 100v212h98V518
+                  c0-12 1.333-20 4-24 8-25.333 24.667-38 50-38 32 0 48 22.667 48 68v174h98" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h6 class="contact-title" style="font-weight: 600; margin: 10px 0;">Name</h6>
-            <p class="contact-text" style="margin: 0; color: #333;">SafeNet AI</p>
         </div>
+    </div>
+</div>
+<br>
+
+
+<!-- Our Team Section -->
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+
+        {% for member in team_list %}
+        <!-- Team Member Card -->
+        <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-4">
+            <div class="flip-card" style="width: 250px; height: 300px;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front d-flex flex-column align-items-start rounded">
+                        <img class="w-100 rounded-0" 
+                            src="https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHx1c2VyfGVufDB8MHx8fDE2OTQwOTU5Nzl8MA&ixlib=rb-4.0.3&q=80&w=1080"
+                            alt="Profile Image">
+                        <p class="mt-1 fw-bold text-dark text-center w-100" style="margin-top: 15px; "> {{ member.first_Name }}
+                            {{member.last_Name}}</p>
+
+
+                        <p class="card-text" style="margin: 0%;margin-left: 5px;">
+                            <strong></strong> {{ member.current_job }}
+                        </p>
+
+                        <p class="card-text" style="margin-top: 5px;margin-left: 5px; ">
+                            <strong></strong> {{ member.work_experience }}
+                        </p>
+                        <p class="card-text " style="margin-left: 15px;">
+                            <strong></strong> {{ member.Role }}
+                        </p>
+
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <h2 class="fs-5">Contact Info</h2>
+                        <p>Email: john.doe@example.com</p>
+                        <p>Phone: (123) 456-7890</p> -->
+
+                        <p class="card-text">
+                            <strong>University:</strong> {{ member.uv_name }}<br>
+                            <strong>Department:</strong> {{ member.dept_name }}<br>
+                            <strong>Domain_expertise:</strong> {{ member.domain_expertise }}<br>
+
+                        </p>
+                        <div class="mt-3">
+                            <p>
+
+                                {% if member.github_url %}
+                                <a href="{{ researcher.github_url }}" target="_blank" class="social_icons"> <i
+                                        class="fa fa-github"></i></a>
+                                {% endif %}
+
+                                {% if member.personal_website %}
+                                <a href="{{ member.personal_website }}" target="_blank" class="social_icons"> <i
+                                        class="fa fa-globe"></i></a>
+                                {% endif %}
+
+                                {% if member.linekdin_url %}
+                                <a href="{{ member.linekdin_url }}" target="_blank" class="social_icons"> <i
+                                        class="fa fa-linkedin"></i></a>
+                                {% endif %}
 
 
 
-        <!-- Phone Section -->
-        <div class="col-md-3 col-sm-6 mb-4 contact-item">
-            <div class="custom-icon" style="color: #1965c8; font-size: 2rem;">
-                <i class="fa-solid fa-phone"></i>
+                                {% if member.google_scholar_url %}
+                                <a href="{{ researcher.google_scholar_url }}" target="_blank" class="social_icons"> <i
+                                        class="fa fa-graduation-cap"></i></a>
+                                {% endif %}
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h6 class="contact-title" style="font-weight: 600; margin: 10px 0;">Phone</h6>
-            <p class="contact-text" style="margin: 0; color: #333;">01646329768</p>
         </div>
+        {% endfor %}
+        <!-- Add New Member Card -->
 
+    </div>
+</div>
 
+<br><br><br><br>
+<!-- Our Team Section -->
 
-        <!-- WhatsApp Section -->
-        <div class="col-md-2 col-sm-6 mb-4 contact-item">
-            <div class="custom-icon" style="color: #25d366; font-size: 2rem;">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <h6 class="contact-title" style="font-weight: 600; margin: 10px 0;">WhatsApp</h6>
-            <p class="contact-text" style="margin: 0; color: #333;">
-                <a href="https://wa.me/8801873967484" target="_blank"
-                    style="text-decoration: none; color: #25d366;">+880 1873-967484</a>
-            </p>
-        </div>
-        <!-- Email Section -->
-        <div class="col-md-3 col-sm-6 mb-4 contact-item">
-            <div class="custom-icon" style="color: #1965c8; font-size: 2rem;">
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <h6 class="contact-title" style="font-weight: 600; margin: 10px 0;">Email</h6>
-            <p class="contact-text" style="margin: 0; color: #333;">safenet.ai.research@gmail.com</p>
+<div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-4">
+    <div class="card text-center" style="width: 250px; height: 300px;">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+            <img class="img-fluid" src="/static/images/add_icon.png" alt="Add Member"
+                style="width: 100px; height: 100px;">
+            <a href="{% url 'About:team_info_form' %}" class="btn btn-primary mt-3">Add New Team Member</a>
         </div>
     </div>
 </div>
 
+
+
+
 <!-- .....anpther contact template -->
 
-<div class="cotainer"  id="contact" style=" background-color: rgb(216, 15, 15);">
+
+<!-- .....anpther contact template -->
+
+<!-- <div class="cotainer" id="contact" style=" background-color: rgb(216, 15, 15);">
     <div style="text-align: center;">
         <a href="https://www.linkedin.com/company/99079523/admin/dashboard/"><img class="sc" width="40" height="40"
                 src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" /></a>
 
         <a href="https://www.facebook.com/profile.php?id=61554548800067" target="_blank"><img class="sc" width="40"
-                height="40" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" /></a>
+                height="40" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" /></a> -->
 
-        <!-- <a href="https://mail.google.com/safenet.ai.research@gmail.com " target="_blank"><img class="sc" width="40" height="40"
+<!-- <a href="https://mail.google.com/safenet.ai.research@gmail.com " target="_blank"><img class="sc" width="40" height="40"
                 src="https://img.icons8.com/color/48/000000/gmail--v1.png" alt="gmail--v1" /></a> -->
 
-        <a href="https://wa.me/8801646329768" target="_blank">
+<!-- <a href="https://wa.me/8801646329768" target="_blank">
             <img class="sc" width="40" height="40" src="https://img.icons8.com/color/48/whatsapp--v1.png"
                 alt="WhatsApp Contact" />
         </a>
@@ -785,9 +507,9 @@ textarea[type=text]:focus {
     </div>
 
 
-</div>
+</div> -->
 
-
+<br><br>
 
 
 
@@ -798,7 +520,5 @@ textarea[type=text]:focus {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-
-
 
 {% endblock %}
