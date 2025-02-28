@@ -417,15 +417,15 @@
                         <!-- <h2 class="fs-5">Contact Info</h2>
                         <p>Email: john.doe@example.com</p>
                         <p>Phone: (123) 456-7890</p> -->
-
+                        
                         <p class="card-text">
                             <strong>University:</strong> {{ member.uv_name }}<br>
                             <strong>Department:</strong> {{ member.dept_name }}<br>
                             <strong>Domain_expertise:</strong> {{ member.domain_expertise }}<br>
 
                         </p>
-                        <div class="mt-3">
-                            <p>
+                        <div style="margin: 0%;padding: 0%;">
+                            <p >
 
                                 {% if member.github_url %}
                                 <a href="{{ researcher.github_url }}" target="_blank" class="social_icons"> <i
@@ -450,7 +450,8 @@
                                 {% endif %}
 
                             </p>
-
+                            <a href="{% url 'About:edit_team_info' member_id=member.id %}" class="edit_button"> <input type="button" value="Edit" name="Edit" class="btn btn-primary">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -464,7 +465,7 @@
 
 <br><br><br><br>
 <!-- Our Team Section -->
-
+{% if user.is_superuser %}
 <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-4">
     <div class="card text-center" style="width: 250px; height: 300px;">
         <div class="card-body d-flex flex-column align-items-center justify-content-center">
@@ -475,7 +476,7 @@
     </div>
 </div>
 
-
+{% endif %}
 
 
 <!-- .....anpther contact template -->

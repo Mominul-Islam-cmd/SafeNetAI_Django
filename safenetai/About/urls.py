@@ -13,6 +13,8 @@ urlpatterns = [
     path("about_us/", views.about_us, name='about_us'),
     path("home/", views.home, name='home'),
     path("team_info_form/", views.team_info_form, name='team_info_form'),
+    path("edit_team_info/<int:member_id>", views.edit_team_info, name='edit_team_info'),
+    path("delete_info/<int:member_id>", views.delete_info, name='delete_info'),
     # path("team_member_view/", views.team_member_view, name='team_member_view'),
   
    

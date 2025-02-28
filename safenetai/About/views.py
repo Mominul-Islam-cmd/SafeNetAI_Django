@@ -44,3 +44,31 @@ def team_info_form(request):
 #     # Researchers_list=researcher_form.objects.get(pk=researcher_id)
 #     diction={'title':'Home Page','team_list':team_list}
 #     return render(request, 'about_us/teaminfo_show.html', context=diction)
+# edit info_form
+
+
+def edit_team_info(request, member_id):
+    members_info = TeamMembers.objects.get(pk=member_id)
+    form = forms.team_form_Details(instance=members_info)
+    diction = {}
+    if request.method == "POST":
+        form = forms.team_form_Details(request.POST, request.FILES, instance=members_info)
+
+        if form.is_valid():
+            form.save(commit=True)
+            # return researcher_view(request)
+            diction.update({'sucess_text': 'Successfully Updated '})
+            
+
+    diction.update({'edit_form': form})
+    diction.update({'member_id': member_id})
+
+    return render(request, 'about_us/edit_team.html', context=diction)
+
+
+# Delete Research_Member
+
+def delete_info(request,member_id):
+    team_member= TeamMembers.objects.get(pk=member_id).delete()
+    diction={'delete_text':'Successfully Deleted !'}
+    return render(request,'about_us/delete.html',context=diction)
