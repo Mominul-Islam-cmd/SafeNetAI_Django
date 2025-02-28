@@ -394,8 +394,8 @@
             <div class="flip-card" style="width: 250px; height: 300px;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front d-flex flex-column align-items-start rounded">
-                        <img class="w-100 rounded-0" 
-                            src="https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHx1c2VyfGVufDB8MHx8fDE2OTQwOTU5Nzl8MA&ixlib=rb-4.0.3&q=80&w=1080"
+                        <img class="w-100 rounded-0" style="height: 150px;"
+                           src="{% if member.profile_pic %}{{ member.profile_pic.url }}{% else %}{% static 'images/default_profile.png' %}{% endif %}"
                             alt="Profile Image">
                         <p class="mt-1 fw-bold text-dark text-center w-100" style="margin-top: 15px; "> {{ member.first_Name }}
                             {{member.last_Name}}</p>
@@ -445,7 +445,7 @@
 
 
                                 {% if member.google_scholar_url %}
-                                <a href="{{ researcher.google_scholar_url }}" target="_blank" class="social_icons"> <i
+                                <a href="{{ member.google_scholar_url }}" target="_blank" class="social_icons"> <i
                                         class="fa fa-graduation-cap"></i></a>
                                 {% endif %}
 
