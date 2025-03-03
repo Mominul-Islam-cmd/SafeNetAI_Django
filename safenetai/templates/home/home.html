@@ -4,8 +4,10 @@
 <style>
     body {
     font-family: 'Open Sans', sans-serif;
-    background-color: rgb(252, 252, 252);
-    background-image: url('images/pexels-rostislav-5011647.jpg');
+    background-image: url('{% static "images/background.jpg" %}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .occ,
@@ -593,7 +595,7 @@ textarea[type=text]:focus {
 
 <!-- <link href="{% static 'about_us/about_us.css' %}" rel="stylesheet"> -->
 
-<div class="container-fluid row bannar_body text-center" style="background-color: transparent;">
+<div class="container-fluid row bannar_body text-center" style="background-image: url('{% static 'images/5zati5qk.png' %}'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
 
     <div class="bannar_items" id="main_about" style="background-color: transparent;">
         <h1 style="font-family: 'Overpass', sans-serif; color: white; text-shadow: 2px 2px 4px #000000;">SafeNet AI
@@ -619,40 +621,47 @@ textarea[type=text]:focus {
     </div> -->
 
 
-<div class="row align-items-center justify-content-center " 
-    style="background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto;">
+<div class="container" style="background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto; margin-top: 20px;">
 
-    <div class="col-12" style="color: white;">
+    <div class="row align-items-center justify-content-center" style="color: white;">
 
-        <h2 class="abname" style="font-family: 'Christmas Friday', sans-serif;">Empowering Research, Enabling
-            Innovation </h2>
-        <p>Join a collaborative platform for AI, NLP, and Computer Vision research and projects. </p>
-        <p class="aboutdetails_text">
-            At SafeNet, we believe research should be accessible to everyone, regardless of background or academic
-            level. Our mission is to foster a collaborative environment where ideas meet innovation, and passion
-            fuels progress.
+        <div class="col-12">
 
-            Join us as we explore the frontiers of AI, NLP, and Computer Vision through groundbreaking research and
-            meaningful collaborations. Whether you're a student, researcher, or industry professional, there's a
-            place for you here.
+            <h2 class="abname" style="font-family: 'Christmas Friday', sans-serif;">Empowering Research, Enabling
+                Innovation </h2>
+            <p>Join a collaborative platform for AI, NLP, and Computer Vision research and projects. </p>
+            <p class="aboutdetails_text">
+                At SafeNet, we believe research should be accessible to everyone, regardless of background or academic
+                level. Our mission is to foster a collaborative environment where ideas meet innovation, and passion
+                fuels progress.
 
-            Together, let's shape the future of technology—one project at a time.
+                Join us as we explore the frontiers of AI, NLP, and Computer Vision through groundbreaking research and
+                meaningful collaborations. Whether you're a student, researcher, or industry professional, there's a
+                place for you here.
 
-        </p>
-        <!-- New Action Buttons -->
-        <div class="d-flex justify-content-center gap-4 mt-5">
-            <a href="project and research\project_publication.html" target="_blank"
-                class="btn btn-primary btn-lg px-4 py-3" style="font-size: 1.2rem; font-weight: 600; color: white;">
-                Explore Our Research
-            </a>
-            <a href="https://www.facebook.com/groups/1718596145212523" target="_blank"
-                class="btn btn-success btn-lg px-4 py-3" style="font-size: 1.2rem; font-weight: 600; color: white;">
-                Join Our Community
-            </a>
+                Together, let's shape the future of technology—one project at a time.
+
+            </p>
+            <!-- New Action Buttons -->
+            <div class="d-flex justify-content-center mt-5">
+                <a href="project and research\project_publication.html" target="_blank"
+                    class="btn btn-primary btn-lg px-4 py-3 mx-2" style="font-size: 1.2rem; font-weight: 600; color: white;">
+                    Explore Our work
+                </a>
+                <a href="https://www.facebook.com/groups/1718596145212523" target="_blank"
+                    class="btn btn-success btn-lg px-4 py-3 mx-2" style="font-size: 1.2rem; font-weight: 600; color: white;">
+                    Join Our Community
+                </a>
+            </div>
+            <style>
+                .btn-primary:hover, .btn-success:hover {
+                    background-color: blue;
+                    color: white;
+                }
+            </style>
+
         </div>
-
     </div>
-</div>
 </div>
 
 
@@ -661,10 +670,9 @@ textarea[type=text]:focus {
 <!-- skill Section -->
 
 
-<div class="container container-fluid mainskillbody" id="mainskillbody"
-    style="color: white; background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto; margin-top: 20px;">
+<div class="container" style="color: white; background-color: rgba(0, 48, 138, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto; margin-top: 20px;">
 
-    <div class="container skillheadr_body " style="color: white;">
+    <div class="container skillheadr_body" style="color: rgb(255, 255, 255); background-color: rgb(19, 64, 161);">
         <h2 class="skillheader_text">Our Research Domains</h2>
         <p>We focus on cutting-edge technologies and emerging fields in AI research, including:</p>
     </div>
@@ -683,11 +691,97 @@ textarea[type=text]:focus {
                 <p>Teaching machines to interpret and understand visual data.</p>
                 <h4 class="sktext">Large Language Models (LLMs)</h4>
                 <p>Developing models that power intelligent conversational AI.</p>
+                <h4 class="sktext">Agentic AI</h4>
+                <p>Developing autonomous systems that can make decisions and take actions independently.</p>
+                <h4 class="sktext">Retrieval-Augmented Generation (RAG)</h4>
+                <p>Combining retrieval-based methods with generative models to enhance information retrieval and generation.</p>
             </div>
         </div>
     </div>
 </div>
+<!-- Services Section -->
+<div class="container" style="color: white; background-color: rgba(0, 0, 0, 0.24); padding: 20px; border-radius: 10px; width: 80%; margin: auto; margin-top: 20px; margin-bottom: 40px;">
+
+    <div class="container serviceheadr_body" style="color: white;">
+        <h2 class="serviceheader_text">Our Services</h2>
+        <p>We offer a range of services to help you achieve your goals:</p>
+    </div>
+
+    <div class="row servicebody" style="color: white;">
+        <!-- Service Cards -->
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-ML.jpg' %}" class="card-img-top" alt="AI/ML Engineering">
+                <div class="card-body">
+                    <h4 class="card-title">AI/ML Engineering</h4>
+                    <p class="card-text">Building intelligent systems through data-driven models and advanced algorithms.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-Webdev.jpg' %}" class="card-img-top" alt="Web Development">
+                <div class="card-body">
+                    <h4 class="card-title">Web Development</h4>
+                    <p class="card-text">Creating responsive and dynamic websites to enhance your online presence.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-data analytics.jpg' %}" class="card-img-top" alt="Data Analytics">
+                <div class="card-body">
+                    <h4 class="card-title">Data Analytics</h4>
+                    <p class="card-text">Transforming data into actionable insights to drive informed decision-making.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-API.jpg' %}" class="card-img-top" alt="API Development">
+                <div class="card-body">
+                    <h4 class="card-title">API Development</h4>
+                    <p class="card-text">Creating robust and scalable APIs to power your applications and services.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-Data scrape.jpeg' %}" class="card-img-top" alt="Data Scraping">
+                <div class="card-body">
+                    <h4 class="card-title">Data Scraping</h4>
+                    <p class="card-text">Extracting valuable data from various sources to support your business needs.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-Annotation.jpeg' %}" class="card-img-top" alt="Data Annotation">
+                <div class="card-body">
+                    <h4 class="card-title">Data Annotation</h4>
+                    <p class="card-text">Labeling and annotating data to enhance the accuracy of your machine learning models.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                <img src="{% static 'images/S-QA test.jpg' %}" class="card-img-top" alt="Software QA Testing">
+                <div class="card-body">
+                    <h4 class="card-title">Software QA Testing</h4>
+                    <p class="card-text">Ensuring the quality and reliability of your software through rigorous testing.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 <!-- .................................................................................................................... -->
