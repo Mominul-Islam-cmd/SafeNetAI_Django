@@ -401,22 +401,22 @@
             <div class="flip-card" style="width: 250px; height: 300px;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front d-flex flex-column align-items-start rounded">
-                        <img class="w-100 rounded-0" style="height: 150px;"
+                        <img class="w-100 rounded-0" style="height: 150px; object-fit: cover;"
                            src="{% if member.profile_pic %}{{ member.profile_pic.url }}{% else %}{% static 'images/default_profile.png' %}{% endif %}"
                             alt="Profile Image">
-                        <p class="mt-1 fw-bold text-dark text-center w-100" style="margin-top: 15px; "> {{ member.first_Name }}
-                            {{member.last_Name}}</p>
+                        <p class="mt-2 fw-bold text-dark text-center w-100" style="margin-top: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><strong> {{ member.first_Name }}
+                            {{member.last_Name}}</strong></p>
 
 
-                        <p class="card-text" style="margin: 0%;margin-left: 5px;">
-                            <strong></strong> {{ member.current_job }}
+                        <p class="card-text" style="margin: 0%;margin-left: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            <em> {{ member.current_job }}</em>
                         </p>
 
-                        <p class="card-text" style="margin-top: 5px;margin-left: 5px; ">
-                            <strong></strong> {{ member.work_experience }}
+                        <p class="card-text" style="margin-top: 5px;margin-left: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            <strong></strong> <em>{{ member.work_experience }} </em>
                         </p>
-                        <p class="card-text " style="margin-left: 15px;">
-                            <strong></strong> {{ member.Role }}
+                        <p class="card-text " style="margin-left: 15px; margin-bottom: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            <strong><u>{{ member.Role }}</u></strong>
                         </p>
 
                     </div>
@@ -424,41 +424,40 @@
                         <!-- <h2 class="fs-5">Contact Info</h2>
                         <p>Email: john.doe@example.com</p>
                         <p>Phone: (123) 456-7890</p> -->
-                        
-                        <p class="card-text">
+
+                        <p class="card-text" style="margin-top: 20px; text-align: left;">
                             <strong>University:</strong> {{ member.uv_name }}<br>
                             <strong>Department:</strong> {{ member.dept_name }}<br>
-                            <strong>Domain_expertise:</strong> {{ member.domain_expertise }}<br>
+                            <strong>Domain Expertise:</strong> {{ member.domain_expertise }}<br>
 
                         </p>
-                        <div style="margin: 0%;padding: 0%;">
-                            <p >
-
+                        <div style="margin: 0%;padding: 0%; display: flex; flex-direction: column; align-items: center;">
+                            <div style="display: flex; align-items: center; justify-content: flex-start; padding-right: 10px; margin: 10px; overflow: hidden;">
                                 {% if member.github_url %}
-                                <a href="{{ researcher.github_url }}" target="_blank" class="social_icons"> <i
+                                <a href="{{ member.github_url }}" target="_blank" class="social_icons" style="margin-right: 5px; margin-bottom: 10px;"> <i
                                         class="fa fa-github"></i></a>
                                 {% endif %}
 
                                 {% if member.personal_website %}
-                                <a href="{{ member.personal_website }}" target="_blank" class="social_icons"> <i
+                                <a href="{{ member.personal_website }}" target="_blank" class="social_icons" style="margin-right: 5px; margin-bottom: 10px;"> <i
                                         class="fa fa-globe"></i></a>
                                 {% endif %}
 
+
                                 {% if member.linekdin_url %}
-                                <a href="{{ member.linekdin_url }}" target="_blank" class="social_icons"> <i
+                                <a href="{{ member.linekdin_url }}" target="_blank" class="social_icons" style="margin-right: 5px; margin-bottom: 10px;"> <i
                                         class="fa fa-linkedin"></i></a>
                                 {% endif %}
 
-
-
                                 {% if member.google_scholar_url %}
-                                <a href="{{ member.google_scholar_url }}" target="_blank" class="social_icons"> <i
+                                <a href="{{ member.google_scholar_url }}" target="_blank" class="social_icons" style="margin-right: 24px; margin-bottom: 10px;"> <i
                                         class="fa fa-graduation-cap"></i></a>
                                 {% endif %}
-
-                            </p>
-                            <a href="{% url 'About:edit_team_info' member_id=member.id %}" class="edit_button"> <input type="button" value="Edit" name="Edit" class="btn btn-primary">
-                            </a>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <a href="{% url 'About:edit_team_info' member_id=member.id %}" class="edit_button" style="display: block; margin: auto;"> <input type="button" value="Edit" name="Edit" class="btn btn-primary">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
